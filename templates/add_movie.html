@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Movie - Admin</title>
+</head>
+<body>
+    <h2>Add New Movie</h2>
+
+    <form method="POST" action="/admin/movies/add">
+        <label>Title:</label><br>
+        <input type="text" name="title" required><br><br>
+
+        <label>Synopsis:</label><br>
+        <textarea name="synopsis" rows="4" cols="50"></textarea><br><br>
+
+        <label>Release Year:</label><br>
+        <input type="number" name="release_year" required><br><br>
+
+        <label>Cast:</label><br>
+        <textarea name="cast" rows="2" cols="50"></textarea><br><br>
+
+        <input type="submit" value="Add Movie">
+    </form>
+
+    <p><a href="/admin/movies">← Back to Admin Panel</a></p>
+</body>
+</html>

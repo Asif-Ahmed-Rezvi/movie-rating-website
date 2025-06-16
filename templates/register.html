@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register - Movie Rating Website</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Register</h1>
+
+    <form method="POST" action="/register">
+        <label for="username">Username:</label><br>
+        <input type="text" name="username" id="username" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" name="email" id="email" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" name="password" id="password" required><br><br>
+
+        <input type="submit" value="Register">
+    </form>
+
+    <br>
+    <p>Already have an account? <a href="/login">Login here</a></p>
+
+    <!-- Display flash messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                    <li style="color: {{ 'green' if category == 'success' else 'red' }}">
+                        {{ message }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+</body>
+</html>

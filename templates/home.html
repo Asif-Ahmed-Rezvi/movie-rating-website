@@ -1,0 +1,23 @@
+<body>
+    <h1>Welcome to Movie Rating Website</h1>
+
+    {% if session.username %}
+        <p>Welcome, {{ session.username }}!</p>
+        <p><a href="/logout">Logout</a></p>
+    {% else %}
+        <p><a href="/login">Login</a> | <a href="/register">Register</a></p>
+    {% endif %}
+        <p><a href="/movies">Browse Movies</a></p>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                    <li style="color: {{ 'green' if category == 'success' else 'red' }}">
+                        {{ message }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</body>
